@@ -1,0 +1,72 @@
+#include <iostream>
+
+using namespace std;
+
+class Node
+{
+public:
+    int Value;
+    Node* newNext;
+};
+
+void printList(Node*n)
+{
+    while(n!=NULL)
+    {
+        cout << n -> Value << endl;
+        n = n -> newNext;
+    }
+}
+
+int main()
+{
+    //youtube girl's way
+    Node* head = new Node();
+    Node* second = new Node();
+    Node* third = new Node();
+
+    head -> Value = 1;
+    head -> newNext = second;
+
+    second -> Value = 2;
+    second -> newNext = third;
+
+    third -> Value = 3;
+    third -> newNext = NULL;
+
+    printList(head);
+
+    //youtube guy's way
+    struct node
+    {
+        int data;
+        node* next;
+    };
+        node* n;
+        node* t;
+        node* h;
+
+        n = new node;
+        n -> data = 1;
+        t = n;
+        h = n;
+
+        n = new node;
+        n -> data = 2;
+        t -> next = n;
+        t = t -> next;
+
+        n = new node;
+        n -> data = 3;
+        t -> next = n;
+      //t = t -> next;
+
+        n = new node;
+        t = t -> next;          // can move to line 30
+        n -> data = 4;
+        t -> next = n;
+
+        n -> next = NULL;
+
+    return 0;
+}
