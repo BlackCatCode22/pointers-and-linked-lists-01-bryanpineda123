@@ -1,0 +1,79 @@
+#include <iostream>
+
+using namespace std;
+
+struct node
+{
+public:
+    int value;
+    node* next;
+};
+
+void printList(node*n)
+{
+    while(n != NULL)
+    {
+        cout << "\n\n" << n -> value << "\n\n" << endl;
+        n = n -> next;
+    }
+}
+
+int main()
+{
+    cout << "\n\n Welcome to my Lined List !\n\n" << endl;
+
+    node* head = new node();
+    node* second = new node();
+    node* third = new node();
+
+    head -> value = 1;
+    head -> next = second;
+
+    second -> value = 2;
+    second -> next = third;
+
+    third -> value = 3;
+    third -> next = NULL;
+
+    // print the list.
+    printList(head);
+
+    // Use a loop to create a linked list of ten nodes.
+
+    // Remember these steps:
+    // 1) Create a new node
+    // 2) fill the new node's data fields
+    // 3) attach the new node to the end of the list
+    // 4) reposition list pointers
+
+    // Set up my Linked list.
+
+    // Create the head of the list
+    node* pHead;
+    // Create a helper pointer named current
+    node* pCurrent;
+    // create a helper pointer named next
+    node* pNext;
+
+    // create a new node.
+    pHead = new node();
+
+    pHead -> value = 1;
+
+    pCurrent = new node();
+    pCurrent -> value = 2;
+
+    pHead -> next = pCurrent;
+
+    pCurrnt->next = NULL;
+
+    printList(pHead);
+
+    for(int i=0; i<100000000000000; i++)
+    {
+
+    }
+
+
+    return 0;
+}
